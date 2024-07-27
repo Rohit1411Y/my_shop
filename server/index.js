@@ -5,8 +5,9 @@ const mongoose = require('mongoose');
 
 //import from files
 
-const authRouter = require("./routes/auth")
-
+const authRouter = require("./routes/auth");
+const adminRouter = require('./routes/admin');
+const productRouter = require('./routes/product');
 
 
 
@@ -18,6 +19,8 @@ const dbUrl = "mongodb+srv://yadavrohit1411:Eq7itkgzIgrL0g4D@cluster0.cjvkvrn.mo
 //middlware
   app.use(express.json());
 app.use(authRouter);
+app.use(adminRouter);
+app.use(productRouter);
 
 
 // connection
